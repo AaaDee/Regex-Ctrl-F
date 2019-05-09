@@ -4,7 +4,7 @@
 
 Ohjelman tarkoituksena on kertoa käyttäjälle, että löytyykö etsitty merkkijono annetusta tekstitiedostosta, ja jos löytyy, niin missä kohdassa tekstitiedostoa löytö tai löydökset ovat (vrt. selaimen tai tekstinkäsittelyohjelman ctrl-f -toiminnallisuus). Pelkkien yksinkertaisten merkkijonojen lisäksi ohjelma tarjoaa myös mahdollisuuden käyttää säännöllisiä lausekkeita erikoismerkkien ()+?*| avulla. Ohjelmassa on myös yksinkertainen graafinen käyttöliittymä, joka tarjoaa mahdollisuuden tekstitiedoston lukemiseen, haettavan merkkijonon syöttämiseen, sekä tulosten esittämiseen.
 
-## Hyödynnettävät algoritmit sekä aika- ja tilavaativuudet.
+## Hyödynnettävät algoritmit sekä aika- ja tilavaativuudet
 
 Säännöllisten lausekkeiden tulkki toteutetaan Thompsonin algoritmilla (Thompson 1968, Cox 2007), jossa lausekkeesta muodostetaan epädeterministinen äärellinen automaatti, jota simuloidaan pinon avulla. Algoritmi on valittu toteutettavaksi, koska se on suhteellisesta yksinkertaisuudestaan huolimatta melko tehokas vaihtoehto (Cox 2007) säännöllisten lausekkeiden toteuttamiseen.
 
@@ -12,7 +12,7 @@ Algoritmin aikavaativuudeksi on arvioitu (Cox 2007) O(mn), missä m on annettun 
 
 Regex Ctrl-F:n toteutuksessa pyritään myös näihin vaativuusluokkiin. Java-toteutuksesta (ja erityisesti Javan merkkijonojen käsittelystä) johtuen on kuitenkin erittäin todennäköistä, että ohjelma toimii vaativuusluokkansa  puitteissa hitaasti edistyneempiin algoritmeihin verrattuna.
 
-## Lähteet:
-[Cox 2007](https://swtch.com/~rsc/regexp/regexp1.html), Regular Expression Matching Can Be Simple And Fast 
+## Lähteet
+* [Cox 2007](https://swtch.com/~rsc/regexp/regexp1.html), Regular Expression Matching Can Be Simple And Fast 
 (but is slow in Java, Perl, PHP, Python, Ruby, ...)
-[Thompson 1968](http://doi.acm.org/10.1145/363347.363387), Regular expression search algorithm
+* [Thompson 1968](http://doi.acm.org/10.1145/363347.363387), Regular expression search algorithm
