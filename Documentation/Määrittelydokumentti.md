@@ -1,4 +1,4 @@
-# Regex-Ctrl-F -Määrittelydokumentti
+# Regex-Ctrl-F Määrittelydokumentti
 
 ## Ohjelman peruskuvaus ja ratkaistava ongelma
 
