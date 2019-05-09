@@ -1,4 +1,4 @@
-* Viikkopalautus 1
+# Viikkopalautus 1
 
 Tämän viikon työskentely tapahtui vielä kokonaan varsinaisen ohjelmoinnin ulkopuolella. Aiheen yleinen määrittely (säännölliset lausekkeet) tapahtui nopeasti, mutta toteutustavan, rajauksen ja käytettävän algoritmin valinassa kului hieman enemmän aikaa. Tällä hetkellä uskon kuitenkin, että nykyisessä mittakaavassaan määrittelydokumentissa määritelty ohjelma on haasteellinen, mutta toteutettavissa.
 
