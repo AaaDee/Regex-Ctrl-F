@@ -7,4 +7,5 @@ Regex implementation in Java, coursework for University of Helsinki (in Finnish)
 
 ## Viikkopalautukset
 
-* [Viikko 1](https://github.com/AaaDee/Regex-Ctrl-F/blob/master/Documentation/Viikkopalautukset/viikko1.md) 
+* [Viikko 1](https://github.com/AaaDee/Regex-Ctrl-F/blob/master/Documentation/Viikkopalautukset/viikko1.md)
+* [Viikko 2](https://github.com/AaaDee/Regex-Ctrl-F/blob/master/Documentation/Viikkopalautukset/viikko2.md) 
