@@ -3,11 +3,11 @@ package io;
 import java.util.Scanner;
 import java.io.File;
 
-public class IOreader {
+public class IoReader {
 
     private Scanner reader;
 
-    public IOreader(String filename) {
+    public IoReader(String filename) {
         try {
             reader = new Scanner(new File(filename));
             System.out.println("jee");

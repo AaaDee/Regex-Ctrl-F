@@ -2,6 +2,7 @@ package program;
 
 import ui.*;
 import io.*;
+import regex.*;
 
 
 public class Main {
@@ -12,9 +13,17 @@ public class Main {
         demo.setVisible(true);
         
         String testfilename = "./src/main/resources/samples/lorem.txt";
-        IOreader reader = new IOreader(testfilename);
+        IoReader reader = new IoReader(testfilename);
         
+        InfixToPostfixParser parser = new InfixToPostfixParser();
         
+        String input = "abc";
+        
+        String formatted = parser.convertInfixToPostfix(input);
+        System.out.println(formatted);
+        Nfa nfa = new Nfa();
+        nfa.initializeNfa(formatted);
+
     }
     
 }

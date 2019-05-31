@@ -16,10 +16,10 @@ import java.util.Collection;
 import java.util.Iterator;
 
 
-public class stackImplementation implements Deque {
+public class StackImplementation implements Deque {
     private Deque stack;
 
-    public stackImplementation() {
+    public StackImplementation() {
         this.stack = new ArrayDeque();
     }
     
@@ -37,6 +37,16 @@ public class stackImplementation implements Deque {
      @Override
     public boolean isEmpty() {
         return stack.isEmpty(); 
+    }
+    
+    @Override
+    public Object peek() {
+        return stack.peek();
+    }
+    
+    @Override
+    public int size() {
+        return stack.size(); 
     }
     
     /// The following methods won't be necessary for the implementation, hence won't be implemented
@@ -136,10 +146,6 @@ public class stackImplementation implements Deque {
         throw new UnsupportedOperationException("Not supported yet."); 
     }
 
-    @Override
-    public Object peek() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
 
     @Override
     public boolean remove(Object o) {
@@ -148,11 +154,6 @@ public class stackImplementation implements Deque {
 
     @Override
     public boolean contains(Object o) {
-        throw new UnsupportedOperationException("Not supported yet."); 
-    }
-
-    @Override
-    public int size() {
         throw new UnsupportedOperationException("Not supported yet."); 
     }
 
