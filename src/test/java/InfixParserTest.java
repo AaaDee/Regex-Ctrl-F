@@ -8,10 +8,10 @@ import static org.junit.Assert.*;
 import regex.InfixToPostfixParser;
 
 
-public class InfixParserTests {
+public class InfixParserTest {
     private static InfixToPostfixParser parser;
     
-    public InfixParserTests() {
+    public InfixParserTest() {
     }
     
     @BeforeClass

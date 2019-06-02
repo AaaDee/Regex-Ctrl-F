@@ -9,15 +9,14 @@ public class Fragment {
    private State state;
    private List<Exit> exitList;
 
-    public Fragment(State state, List<Exit> out) {
+    public Fragment(State state, List<Exit> exitList) {
         this.state = state;
-        this.exitList = out;
+        this.exitList = exitList;
     }
 
     public Fragment(State state) {
         this.state = state;
         this.exitList = new ArrayList<Exit>();
-        
         this.exitList.add(new Exit(state, 1));
     }
     
