@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Fragment {
-   private State state;
-   private List<Exit> exitList;
+    private State state;
+    private List<Exit> exitList;
 
     public Fragment(State state, List<Exit> exitList) {
         this.state = state;
@@ -20,11 +20,11 @@ public class Fragment {
         this.exitList.add(new Exit(state, 1));
     }
     
-    public void setExits(State newExit){
-        for (Exit exit : exitList){
+    public void setExits(State newExit) {
+        for (Exit exit : exitList) {
             State oldState = exit.getState();
             
-            if (exit.getExitNumber() == 1){
+            if (exit.getExitNumber() == 1) {
                 oldState.setExitState1(newExit);
             } else {
                 oldState.setExitState2(newExit);

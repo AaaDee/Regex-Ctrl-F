@@ -13,18 +13,18 @@ import java.util.Stack;
 
 
 public class InfixToPostfixParser {
-    private char[] Operators = {'|','+','?','*'};
+    private char[] operators = {'|','+','?','*'};
     
-    public String convertInfixToPostfix(String input){
+    public String convertInfixToPostfix(String input) {
         String output = "";
         input = this.formatInput(input);
         
         Stack<Character> stack = new Stack<Character>();
         
-        for (int i = 0; i < input.length(); i++){
+        for (int i = 0; i < input.length(); i++) {
             Character inputChar = input.charAt(i);
             
-            switch(inputChar){
+            switch (inputChar) {
                 case '(':
                     stack.push(inputChar);
                     break;
@@ -37,10 +37,10 @@ public class InfixToPostfixParser {
                     break;
                 
                 default:
-                    while (!stack.isEmpty()){
+                    while (!stack.isEmpty()) {
                         Character topOfStack = stack.peek();
                         
-                        if (this.getPrecedence(topOfStack) >= this.getPrecedence(inputChar)){
+                        if (this.getPrecedence(topOfStack) >= this.getPrecedence(inputChar)) {
                             output += stack.pop();
                         } else {
                             break;
@@ -52,7 +52,7 @@ public class InfixToPostfixParser {
             }
         }
         
-        while (!stack.isEmpty()){
+        while (!stack.isEmpty()) {
             output += stack.pop();
         }
         
@@ -63,12 +63,12 @@ public class InfixToPostfixParser {
     
     
     // formats the input by adding . as a concatenation operator
-    public String formatInput(String input){
+    public String formatInput(String input) {
         input = input.toLowerCase();
         
         String output = "";
         
-        for (int i = 0; i < input.length(); i++){
+        for (int i = 0; i < input.length(); i++) {
             Character inputChar = input.charAt(i);
             
             if (i < input.length() - 1){
@@ -80,7 +80,7 @@ public class InfixToPostfixParser {
                 if(!inputChar.equals('(') && 
                         !nextChar.equals(')') &&
                         !this.isAnOperator(nextChar) && 
-                        !inputChar.equals('|')){
+                        !inputChar.equals('|')) {
                     output += '.';
                 }
             }
@@ -94,18 +94,18 @@ public class InfixToPostfixParser {
         
     
     // checks whether c is in the list of operator characters
-    public boolean isAnOperator(char c){
+    public boolean isAnOperator(char c) {
         
-        for (int i=0; i < Operators.length; i++){
-            if (Operators[i] == c){
+        for (int i=0; i < operators.length; i++) {
+            if (operators[i] == c) {
                 return true;
             }
         }
         return false;
     }
     
-    private Integer getPrecedence(Character c){
-        switch(c){
+    private Integer getPrecedence(Character c) {
+        switch (c) {
             case '(':
                 return 1;
             case '|':

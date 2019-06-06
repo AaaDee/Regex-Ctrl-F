@@ -1,24 +1,27 @@
 package io;
 
-import java.util.Scanner;
 import java.io.File;
+import java.util.Scanner;
+
 
 public class IoReader {
-
     private Scanner reader;
 
-    public IoReader(String filename) {
+    public IoReader(File file) {
         try {
-            reader = new Scanner(new File(filename));
-            System.out.println("jee");
+            reader = new Scanner(file);
         } catch (Exception e) {
             System.out.println("Virhe: " + e.getMessage());
         }
     }
     
     
-    private String giveNextLine() {
-        if (reader.hasNext()){
+    public boolean hasNextLine() {
+        return reader.hasNext();
+    }
+    
+    public String giveNextLine() {
+        if (reader.hasNext()) {
             return reader.nextLine();
         }
         

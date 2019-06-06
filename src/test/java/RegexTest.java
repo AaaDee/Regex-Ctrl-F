@@ -6,6 +6,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import regex.RegexMatcher;
+import program.Program;
 
 /**
  *
@@ -211,6 +212,8 @@ public class RegexTest {
         boolean matchFound = matcher.isRegexFoundInText(regex, text);
         assertFalse(matchFound);
     }
+    
+    
 }
     
 
