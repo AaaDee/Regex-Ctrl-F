@@ -4,6 +4,7 @@ Regex implementation in Java, coursework for University of Helsinki (in Finnish)
 ## Dokumentaatio
 
 * [Määrittelydokumetti](https://github.com/AaaDee/Regex-Ctrl-F/blob/master/Documentation/M%C3%A4%C3%A4rittelydokumentti.md)
+* [Käyttöohje](https://github.com/AaaDee/Regex-Ctrl-F/blob/master/Documentation/K%C3%A4ytt%C3%B6ohje.md)
 
 ## Viikkopalautukset
 
