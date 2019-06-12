@@ -3,15 +3,13 @@ package regex;
 
 //Simulates the given regex-Nfa, trying to find matches.
 
-//Will be removed later
-import java.util.ArrayList;
-import java.util.List;
+import util.DynamicArray;
 
 public class NfaSimulator {
    private Nfa nfa;
-   private List<State> currentStates;
-   private List<State> nextStates;
-   private List<State> startStates;
+   private DynamicArray<State> currentStates;
+   private DynamicArray<State> nextStates;
+   private DynamicArray<State> startStates;
    private boolean match;
    private int firstMatchPosition;
    int iteration;
@@ -27,9 +25,9 @@ public class NfaSimulator {
     public NfaSimulator(Nfa nfa) {
         this.nfa = nfa;
         this.match = false;
-        this.currentStates = new ArrayList<State>();
-        this.nextStates = new ArrayList<State>();
-        this.startStates = new ArrayList<State>();
+        this.currentStates = new DynamicArray<>();
+        this.nextStates = new DynamicArray<>();
+        this.startStates = new DynamicArray<>();
         this.iteration = 0;
         this.firstMatchPosition = -99;
     }
@@ -48,7 +46,8 @@ public class NfaSimulator {
             }
         }
         
-        for (State state : this.currentStates){
+        for (int i = 0; i < this.currentStates.getSize(); i++){
+            State state = this.currentStates.get(i);
             if (state.getStateChar().equals('M')){
                 this.match = true;
                 this.adjustFirstMatch(state);
@@ -59,9 +58,10 @@ public class NfaSimulator {
 
     private void simulateStep(Character inputChar) {
         this.iteration++;
-        this.nextStates = new ArrayList<State>();
+        this.nextStates = new DynamicArray<>();
         
-        for (State state : currentStates){
+        for (int i = 0; i < this.currentStates.getSize(); i++){
+            State state = this.currentStates.get(i);
             if (state.getStateChar().equals('M')){
                 this.match = true;
                 this.adjustFirstMatch(state);
@@ -76,7 +76,7 @@ public class NfaSimulator {
         this.addStateToCurrentList(this.nfa.getStartState());
     }
     
-    private void addStateToList(State state, List list, int hit){
+    private void addStateToList(State state, DynamicArray list, int hit){
         if (this.iteration == state.getLastList()){
             return;
         }

@@ -2,26 +2,26 @@
 package regex;
 
 // These will be removed with the completed version
-import java.util.ArrayList;
-import java.util.List;
+import util.DynamicArray;
 
 public class Fragment {
     private State state;
-    private List<Exit> exitList;
+    private DynamicArray<Exit> exitList;
 
-    public Fragment(State state, List<Exit> exitList) {
+    public Fragment(State state, DynamicArray<Exit> exitList) {
         this.state = state;
         this.exitList = exitList;
     }
 
     public Fragment(State state) {
         this.state = state;
-        this.exitList = new ArrayList<Exit>();
+        this.exitList = new DynamicArray<Exit>();
         this.exitList.add(new Exit(state, 1));
     }
     
     public void setExits(State newExit) {
-        for (Exit exit : exitList) {
+        for (int i = 0; i < exitList.getSize(); i++) {
+            Exit exit = exitList.get(i);
             State oldState = exit.getState();
             
             if (exit.getExitNumber() == 1) {
@@ -36,7 +36,7 @@ public class Fragment {
         return state;
     }
 
-    public List<Exit> getExitList() {
+    public DynamicArray<Exit> getExitList() {
         return exitList;
     }
 }

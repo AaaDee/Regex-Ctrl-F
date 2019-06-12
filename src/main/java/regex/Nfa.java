@@ -1,18 +1,14 @@
 
 package regex;
 
-/// importing the interface only
-import java.util.Deque;
-
-/// importing ArrayList for now, will be removed later
-import java.util.ArrayList;
-import java.util.List;
+import util.DynamicArray;
+import util.MyStack;
 
 public class Nfa {
-    private Deque<Fragment> stack;
+    private MyStack<Fragment> stack;
     
     public Nfa() {
-        this.stack = new StackImplementation();
+        this.stack = new MyStack<>();
     }
     
     public void initializeNfa(String input){
@@ -87,7 +83,8 @@ public class Nfa {
         
         State split = new State('S', firstFragment.getState(), secondFragment.getState());
         
-        List<Exit> newExits = new ArrayList(firstFragment.getExitList());
+        DynamicArray<Exit> newExits = new DynamicArray<>();
+        newExits.addAll(firstFragment.getExitList());
         newExits.addAll(secondFragment.getExitList());
         
         Fragment newFragment = new Fragment(split, newExits);
@@ -98,7 +95,8 @@ public class Nfa {
         Fragment previousFragment = stack.pop();
         State split = new State('S', previousFragment.getState());
         
-        List<Exit> newExits = new ArrayList(previousFragment.getExitList());
+        DynamicArray<Exit> newExits = new DynamicArray<>();
+        newExits.addAll(previousFragment.getExitList());
         newExits.add(new Exit(split, 2));
         
         Fragment newFragment = new Fragment(split, newExits);
@@ -109,7 +107,7 @@ public class Nfa {
         Fragment previousFragment = stack.pop();
         State split = new State('S', previousFragment.getState());
         
-        List<Exit> exits = new ArrayList<>();
+        DynamicArray<Exit> exits = new DynamicArray<>();
         exits.add(new Exit(split, 2));
 
         Fragment newFragment = new Fragment(split, exits);
@@ -123,7 +121,7 @@ public class Nfa {
         Fragment previousFragment = stack.pop();
         State split = new State('S', previousFragment.getState());
         
-        List<Exit> exits = new ArrayList<>();
+        DynamicArray<Exit> exits = new DynamicArray<>();
         exits.add(new Exit(split, 2));
 
         Fragment newFragment = new Fragment(previousFragment.getState(), exits);
