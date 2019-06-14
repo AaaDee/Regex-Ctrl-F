@@ -2,7 +2,9 @@
 
 Ohjelmassa käytetyt tietorakenteet (dynaaminen lista ja pino) on nyt toteutettu itse, ja ohjelma pyörii niillä samaan tapaan kuin ennenkin ja läpäisee testit.
 
-Dokumentaatiota on päivitetty, ja puuttuvat dokumentit lisätty. Suorituskykytestaus aloitettu
+Dokumentaatiota on päivitetty, ja puuttuvat dokumentit lisätty. 
+
+Suorituskykytestaus aloitettu, ja vertailutestit oman ja Javan valmiin Regexin välillä on tehty. Vielä olisi tarkoitus tehdä ainakin testi, jossa suoritusaikoja verrataan syötteen kokoon.
 
 Toinen koodikatselmus on tehty [täällä:](https://github.com/Darake/zip-zop/issues/2)
 

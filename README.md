@@ -5,8 +5,8 @@ Regex implementation in Java, coursework for University of Helsinki (in Finnish)
 
 * [Määrittelydokumetti](https://github.com/AaaDee/Regex-Ctrl-F/blob/master/Documentation/M%C3%A4%C3%A4rittelydokumentti.md)
 * [Käyttöohje](https://github.com/AaaDee/Regex-Ctrl-F/blob/master/Documentation/K%C3%A4ytt%C3%B6ohje.md)
-* [Toteutusdokumentti]()
-* [Testausdokumentti]()
+* [Toteutusdokumentti](https://github.com/AaaDee/Regex-Ctrl-F/blob/master/Documentation/Toteutusdokumentti.md)
+* [Testausdokumentti](https://github.com/AaaDee/Regex-Ctrl-F/blob/master/Documentation/Testausdokumentti.md)
 
 ## Viikkopalautukset
 

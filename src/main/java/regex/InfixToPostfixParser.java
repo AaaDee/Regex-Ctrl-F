@@ -6,7 +6,7 @@ parseable postfix notation
 package regex;
 
 // Will be replaced later
-import java.util.Stack;
+import util.MyStack;
 
 
 
@@ -19,7 +19,7 @@ public class InfixToPostfixParser {
         String output = "";
         input = this.formatInput(input);
         
-        Stack<Character> stack = new Stack<Character>();
+        MyStack<Character> stack = new MyStack<Character>();
         
         for (int i = 0; i < input.length(); i++) {
             Character inputChar = input.charAt(i);
