@@ -19,7 +19,7 @@ import java.util.regex.Matcher;
  *
  * @author AD
  */
-
+@Ignore("Relatively slow tests, run only when necessary")
 public class PerformanceTest {
     
     public PerformanceTest() {
@@ -80,12 +80,12 @@ public class PerformanceTest {
         String text = reader.giveNextLine();
 
         //Ctrl-F
-        long timeElapsed = this.timeWithCtrlF(text, regex, 10);
+        long timeElapsed = this.timeWithCtrlF(text, regex, 100);
         String output = "Test: " + testName + " Case: Ctrl-F Time: " + timeElapsed + " ms";
         System.out.println(output);
         
         //Default Java Regex
-        timeElapsed = this.timeWithJavaRegex(text, regex, 10);
+        timeElapsed = this.timeWithJavaRegex(text, regex, 100);
         output = "Test: " + testName + " Case: Java Regex: " + timeElapsed + " ms";
         System.out.println(output);
         
@@ -104,7 +104,7 @@ public class PerformanceTest {
             totalTime += endTime - startTime;
         }
         
-        long averageTime = totalTime / 10;
+        long averageTime = totalTime / repetitions;
         return averageTime;
     }
     
@@ -123,7 +123,7 @@ public class PerformanceTest {
             totalTime += endTime - startTime;
         }
         
-        long averageTime = totalTime / 10;
+        long averageTime = totalTime / repetitions;
         return averageTime;
     }
 }

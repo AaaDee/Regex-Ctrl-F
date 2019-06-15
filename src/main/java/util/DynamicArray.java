@@ -49,19 +49,19 @@ public class DynamicArray<T> {
     }
     
     /**
-     * Returns the object from a given index
+     * 
      * 
      * @param index Index of the object to be returned
-     * @return
+     * @return The object from a given index
      */
     public T get(int index){
         return this.array[index];
     }
     
     /**
-     * Tells the current size i.e. the number of objects in the array.
      * 
-     * @return
+     * 
+     * @return the current size i.e. the number of objects in the array.
      */
     public int getSize(){
         return this.currentSize;
