@@ -25,6 +25,7 @@ hs_err_pid*
 # folders
 build/
 nbproject/
+.nb-gradle/
 
 #
 .nb-gradle-properties

@@ -47,7 +47,7 @@ public Ui(UiController controller){
         private JButton createChooseFileButton(UiController controller){
             JButton button = new JButton("Choose File");
             button.setBounds(0,0,200,40);
-            button.addActionListener(new chooseFileButtonActionListener(controller));
+            button.addActionListener(new ChooseFileButtonActionListener(controller));
             
             return button;
         }
@@ -55,7 +55,7 @@ public Ui(UiController controller){
         private JButton createRunButton(UiController controller){
             JButton button = new JButton("Run");
             button.setBounds(0,80,200,40);
-            button.addActionListener(new runButtonActionListener(controller));
+            button.addActionListener(new RunButtonActionListener(controller));
             
             return button;
         }
