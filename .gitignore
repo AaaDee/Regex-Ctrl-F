@@ -27,4 +27,4 @@ build/
 nbproject/
 
 #
-*.nb-gradle-properties
+.nb-gradle-properties
