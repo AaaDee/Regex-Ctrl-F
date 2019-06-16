@@ -15,7 +15,7 @@ public class Fragment {
 
     public Fragment(State state) {
         this.state = state;
-        this.exitList = new DynamicArray<Exit>();
+        this.exitList = new DynamicArray<>();
         this.exitList.add(new Exit(state, 1));
     }
     

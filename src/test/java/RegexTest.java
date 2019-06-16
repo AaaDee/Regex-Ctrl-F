@@ -6,7 +6,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import regex.RegexMatcher;
-import program.Program;
+import io.IoReader;
+import java.io.File;
 
 /**
  *
@@ -213,6 +214,19 @@ public class RegexTest {
         assertFalse(matchFound);
     }
     
+    @Test
+    public void complicatedStringPositionedInLongText(){
+        String regex = "(b?i*(ps)+u(m|x)oops)|(b?anada)";
+        
+        File file = new File("./src/test/resources/lorem.txt");
+        IoReader reader= new IoReader(file);
+        String text = reader.giveNextLine();
+        
+        RegexMatcher matcher = new RegexMatcher();
+        int matchStart = matcher.getFirstMatchPosition(regex, text);
+        
+        assertEquals(matchStart, 998924);
+    }
     
 }
     

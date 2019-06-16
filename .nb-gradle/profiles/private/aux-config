@@ -5,6 +5,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
       <group>
+        <file>file:/home/ad/Tira/Regex-Ctrl-F/src/test/java/performance/PerformanceTest.java</file>
         <file>file:/home/ad/Tira/Regex-Ctrl-F/src/main/java/ui/runButtonActionListener.java</file>
         <file>file:/home/ad/Tira/Regex-Ctrl-F/src/main/java/regex/Fragment.java</file>
         <file>file:/home/ad/Tira/Regex-Ctrl-F/src/main/java/regex/InfixToPostfixParser.java</file>
@@ -15,7 +16,6 @@
         <file>file:/home/ad/Tira/Regex-Ctrl-F/src/test/java/utils/DynamicArrayTest.java</file>
         <file>file:/home/ad/Tira/Regex-Ctrl-F/src/main/java/regex/NfaSimulator.java</file>
         <file>file:/home/ad/Tira/Regex-Ctrl-F/src/main/java/ui/Ui.java</file>
-        <file>file:/home/ad/Tira/Regex-Ctrl-F/src/main/java/program/FileProcesser.java</file>
         <file>file:/home/ad/Tira/Regex-Ctrl-F/src/main/java/util/MyStack.java</file>
         <file>file:/home/ad/Tira/Regex-Ctrl-F/src/main/java/ui/UiController.java</file>
         <file>file:/home/ad/Tira/Regex-Ctrl-F/build.gradle</file>

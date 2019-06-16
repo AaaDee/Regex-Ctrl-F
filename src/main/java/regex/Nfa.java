@@ -6,9 +6,11 @@ import util.MyStack;
 
 public class Nfa {
     private MyStack<Fragment> stack;
+
     
     public Nfa() {
         this.stack = new MyStack<>();
+        
     }
     
     public void initializeNfa(String input){
@@ -83,8 +85,7 @@ public class Nfa {
         
         State split = new State('S', firstFragment.getState(), secondFragment.getState());
         
-        DynamicArray<Exit> newExits = new DynamicArray<>();
-        newExits.addAll(firstFragment.getExitList());
+        DynamicArray<Exit> newExits = firstFragment.getExitList();
         newExits.addAll(secondFragment.getExitList());
         
         Fragment newFragment = new Fragment(split, newExits);
@@ -95,8 +96,7 @@ public class Nfa {
         Fragment previousFragment = stack.pop();
         State split = new State('S', previousFragment.getState());
         
-        DynamicArray<Exit> newExits = new DynamicArray<>();
-        newExits.addAll(previousFragment.getExitList());
+        DynamicArray<Exit> newExits = previousFragment.getExitList();
         newExits.add(new Exit(split, 2));
         
         Fragment newFragment = new Fragment(split, newExits);
