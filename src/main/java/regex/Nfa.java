@@ -4,35 +4,50 @@ package regex;
 import util.DynamicArray;
 import util.MyStack;
 
+/**
+ * A class for representing the regex string as a nondeterministic finite
+ * automaton (NFA) 
+ * 
+ * @author AD
+ */
 public class Nfa {
-    private MyStack<Fragment> stack;
+    private final MyStack<Fragment> stack;
 
-    
-    public Nfa() {
+    /**
+     * Constructs a new NFA from the input string.
+     * @param regex The regex string (in infix notation) used to form the NFA.
+     */
+    public Nfa(String regex) {
         this.stack = new MyStack<>();
-        
+        this.initializeNfa(regex);
     }
     
-    public void initializeNfa(String input){
+ 
+    private void initializeNfa(String input){
         String postfixInput = this.convertToPostfix(input);
         
+        // process input characters one by one
         for (int i = 0; i < postfixInput.length(); i++){
             Character inputChar = postfixInput.charAt(i);
             this.insert(inputChar);
         }
         
-        // add a final character for a matchstate
+        // add a final character for a final matching state
         this.insert('M');
         this.insert('.');
     }
     
+    /**
+     *
+     * @return
+     */
     public State getStartState(){
         State start = stack.peek().getState();
         return(start);
     }
     
     // check whether the input char is a normal or some special character, and process accordingly
-    public void insert(Character insertedChar){
+    private void insert(Character insertedChar){
         switch(insertedChar){
             case '.':
                 this.addPoint();
@@ -144,7 +159,4 @@ public class Nfa {
         String postfixInput = parser.convertInfixToPostfix(input);
         return postfixInput;
     }
-
-    
-    
 }

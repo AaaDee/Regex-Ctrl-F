@@ -33,32 +33,21 @@ public class InfixParserTest {
     public void tearDown() {
     }
 
-    
-    @Test
-    public void formatterRecognizesAnOperator(){
-        assertTrue(parser.isAnOperator('+'));
-    }
-    
-    @Test
-    public void formatterRecognizesAnNonOperator(){
-        assertFalse(parser.isAnOperator('a'));
-    }
-    
     @Test
     public void formatterFormatsBasicString(){
         String input = "Testi";
         
-        String output = parser.formatInput(input);
+        String output = parser.convertInfixToPostfix(input);
         
-        assertEquals(output, "t.e.s.t.i");     
+        assertEquals(output, "te.s.t.i.");     
     }
     
     @Test
     public void formatterFormasStringWithOperators(){
         String input = "T?(es)ti";
-        String output = parser.formatInput(input);
+        String output = parser.convertInfixToPostfix(input);
         
-        assertEquals(output, "t?.(e.s).t.i");       
+        assertEquals(output, "t?es..t.i.");       
     }
     
     @Test

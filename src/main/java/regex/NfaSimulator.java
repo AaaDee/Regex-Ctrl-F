@@ -1,18 +1,16 @@
 
 package regex;
 
-//Simulates the given regex-Nfa, trying to find matches.
-
 import util.DynamicArray;
 
 public class NfaSimulator {
    private Nfa nfa;
    private DynamicArray<State> currentStates;
    private DynamicArray<State> nextStates;
-   private DynamicArray<State> startStates;
+   private final DynamicArray<State> startStates;
    private boolean match;
    private int firstMatchPosition;
-   int iteration;
+   private int iteration;
 
     public boolean isMatch() {
         return match;
@@ -76,6 +74,7 @@ public class NfaSimulator {
         this.addStateToCurrentList(this.nfa.getStartState());
     }
     
+    // adds state to the list of the potential states where the NFA could be in.
     private void addStateToList(State state, DynamicArray list, int hit){
         if (this.iteration == state.getLastList()){
             return;

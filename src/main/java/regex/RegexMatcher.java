@@ -1,7 +1,5 @@
 package regex;
 
-import io.IoReader;
-
 public class RegexMatcher {
     private Nfa nfa;
     private NfaSimulator simulator;
@@ -18,8 +16,7 @@ public class RegexMatcher {
     }
     
     private void simulateNfa(String regex, String text){
-        this.nfa = new Nfa();
-        this.nfa.initializeNfa(regex);
+        this.nfa = new Nfa(regex);
         
         String textLowerCase = text.toLowerCase();
         

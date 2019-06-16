@@ -24,7 +24,7 @@ public class UiController {
         
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             File file = chooser.getSelectedFile();
-            this.program.updateFile(this, file);
+            this.program.setFile(this, file);
         }
     }
 
@@ -35,7 +35,7 @@ public class UiController {
     }
 
     void runFileButtonClicked() {
-        this.program.startRegex(this);
+        this.program.runRegexFromBeginningOfText(this);
     }
 
     public String getRegexString() {

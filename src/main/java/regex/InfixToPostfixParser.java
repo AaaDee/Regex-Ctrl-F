@@ -1,17 +1,22 @@
-/* 
-A Parser which converts the standard infix regex notation to more easily
-parseable postfix notation
-*/
-
 package regex;
-
 
 import util.MyStack;
 
-
+/**
+ * A parser which turns the inputted regex into a form that can be read
+ * easier by the program.
+ * 
+ * @author AD
+ */
 public class InfixToPostfixParser {
-    private char[] operators = {'|','+','?','*'};
+    private final char[] operators = {'|','+','?','*'};
     
+    /**
+     * Converts a given string into postfix format.
+     * 
+     * @param input The regex string as inputted by the user
+     * @return The regex string in postfix format
+     */
     public String convertInfixToPostfix(String input) {
         String output = "";
         input = this.formatInput(input);
@@ -60,7 +65,7 @@ public class InfixToPostfixParser {
     
     
     // formats the input by adding . as a concatenation operator
-    public String formatInput(String input) {
+    private String formatInput(String input) {
         input = input.toLowerCase();
         
         String output = "";
@@ -68,32 +73,31 @@ public class InfixToPostfixParser {
         for (int i = 0; i < input.length(); i++) {
             Character inputChar = input.charAt(i);
             
-            if (i < input.length() - 1){
-                Character nextChar = input.charAt(i+1);
+            if (i < input.length() - 1) {
+                Character nextChar = input.charAt(i + 1);
                 
                 output += inputChar;
                 
                 // checks, whether . needs to be added
-                if(!inputChar.equals('(') && 
-                        !nextChar.equals(')') &&
-                        !this.isAnOperator(nextChar) && 
-                        !inputChar.equals('|')) {
+                if (!inputChar.equals('(')
+                        && !nextChar.equals(')') 
+                        && !this.isAnOperator(nextChar)
+                        && !inputChar.equals('|')) {
                     output += '.';
                 }
             }
         }
-        
         // adding the last characted as a corner case
-        output += input.charAt(input.length()-1);
+        output += input.charAt(input.length() - 1);
                
-      return output;
+        return output;
     }
         
     
     // checks whether c is in the list of operator characters
-    public boolean isAnOperator(char c) {
+    private boolean isAnOperator(char c) {
         
-        for (int i=0; i < operators.length; i++) {
+        for (int i = 0; i < operators.length; i++) {
             if (operators[i] == c) {
                 return true;
             }
@@ -101,6 +105,7 @@ public class InfixToPostfixParser {
         return false;
     }
     
+    // precedence values for all operators used, and a default case
     private Integer getPrecedence(Character c) {
         switch (c) {
             case '(':
