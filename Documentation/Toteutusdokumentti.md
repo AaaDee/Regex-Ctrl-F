@@ -15,7 +15,7 @@ Ohjelma on jaettu seuraaviin pakkauksiin:
 
 ### Luokkakaavio
 
-![Luokkakaavio](https://github.com/AaaDee/Regex-Ctrl-F/tree/master/Documentation/images/classDiagram.png "Luokkakaavio")
+![Luokkakaavio](/Documentation/images/classDiagram.png "Luokkakaavio")
 
 Luokkakaavioon on sisällytetty vain keskeisimmät luokat. Yksisuuntainen nuoli kuvaa sitä, että nuolen kärjessä oleva luokka/pakkaus hyödyntää toisessa päässä olevaa luokkaa/pakkausta, mutta ei tosin päin. Esimerkiksi regex-pakkaus hyödyntää util-pakkausta, mutta util ei tee regexillä mitään. Kaksisuuntainen nuoli taas tarkoittaa, että vuorovaikutusta on kumpaankin suuntaan. Esimerkiksi UiController ottaa Program-luokalta vastaan tietoa algoritmin tuloksista, ja puolestaan antaa Programille tietoa käyttäjän toiminnasta.
 
