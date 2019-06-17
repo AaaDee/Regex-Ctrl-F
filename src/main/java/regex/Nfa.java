@@ -6,7 +6,7 @@ import util.MyStack;
 
 /**
  * A class for representing the regex string as a nondeterministic finite
- * automaton (NFA) 
+ * automaton (NFA). 
  * 
  * @author AD
  */
@@ -23,11 +23,11 @@ public class Nfa {
     }
     
  
-    private void initializeNfa(String input){
+    private void initializeNfa(String input) {
         String postfixInput = this.convertToPostfix(input);
         
         // process input characters one by one
-        for (int i = 0; i < postfixInput.length(); i++){
+        for (int i = 0; i < postfixInput.length(); i++) {
             Character inputChar = postfixInput.charAt(i);
             this.insert(inputChar);
         }
@@ -38,17 +38,18 @@ public class Nfa {
     }
     
     /**
-     *
-     * @return
+     * Returns the starting state of the NFA.
+     * 
+     * @return the starting state
      */
-    public State getStartState(){
+    public State getStartState() {
         State start = stack.peek().getState();
-        return(start);
+        return start;
     }
     
     // check whether the input char is a normal or some special character, and process accordingly
-    private void insert(Character insertedChar){
-        switch(insertedChar){
+    private void insert(Character insertedChar) {
+        switch (insertedChar) {
             case '.':
                 this.addPoint();
                 break;
@@ -118,7 +119,7 @@ public class Nfa {
         stack.push(newFragment);
     }
     
-    private void addStar(){
+    private void addStar() {
         Fragment previousFragment = stack.pop();
         State split = new State('S', previousFragment.getState());
         
@@ -146,11 +147,11 @@ public class Nfa {
         stack.push(newFragment);
     }
     
-    private void patch(Fragment firstFragment, Fragment secondFragment){
+    private void patch(Fragment firstFragment, Fragment secondFragment) {
         firstFragment.setExits(secondFragment.getState());
     }
     
-    private void patchToState(Fragment fragment, State state){
+    private void patchToState(Fragment fragment, State state) {
         fragment.setExits(state);
     }
 

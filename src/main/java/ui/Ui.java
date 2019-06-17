@@ -1,37 +1,37 @@
 package ui;
 
-import java.awt.event.ActionListener;
-import javax.swing.JFrame;
 import javax.swing.JButton;
-import javax.swing.JTextField;
-import javax.swing.JTextArea;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
-public class Ui extends JFrame{
-    private JLabel fileText;
-    private JButton chooseFileButton;
-    private JButton runButton;
-    private JTextField regexInput;
-    private JTextArea display;
-            
-public Ui(UiController controller){
-        setSize(600, 300);
-        setTitle("Rexeg-Ctrl-F");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+public class Ui extends JFrame {
+    private final JLabel fileText;
+    private final JButton chooseFileButton;
+    private final JButton runButton;
+    private final JTextField regexInput;
+    private final JTextArea display;
+
+    public Ui(UiController controller) {
+        this.setSize(600, 300);
+        this.setTitle("Rexeg-Ctrl-F");
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         
         this.chooseFileButton = createChooseFileButton(controller);
         this.runButton = createRunButton(controller);
         
         this.regexInput = new JTextField("write your regex here");
-        regexInput.setBounds(0,40,200,40);
+        this.regexInput.setBounds(0,40,200,40);
         
         String instructions = "Input your regex, choose file and click run";
         this.display = new JTextArea(instructions);
-        display.setBounds(0,200,600,400);
-        display.setEditable(false);
+        this.display.setBounds(0,200,600,400);
+        this.display.setEditable(false);
         
         this.fileText = new JLabel("File Chosen: None");
-        fileText.setBounds(250, 20, 200, 40);
+        this.fileText.setBounds(250, 20, 200, 40);
         
 
         
@@ -44,31 +44,31 @@ public Ui(UiController controller){
         this.setLayout(null);
     }
 
-        private JButton createChooseFileButton(UiController controller){
-            JButton button = new JButton("Choose File");
-            button.setBounds(0,0,200,40);
-            button.addActionListener(new ChooseFileButtonActionListener(controller));
+    private JButton createChooseFileButton(UiController controller) {
+        JButton button = new JButton("Choose File");
+        button.setBounds(0,0,200,40);
+        button.addActionListener(new ChooseFileButtonActionListener(controller));
             
-            return button;
-        }
+        return button;
+    }
         
-        private JButton createRunButton(UiController controller){
-            JButton button = new JButton("Run");
-            button.setBounds(0,80,200,40);
-            button.addActionListener(new RunButtonActionListener(controller));
+    private JButton createRunButton(UiController controller) {
+        JButton button = new JButton("Run");
+        button.setBounds(0,80,200,40);
+        button.addActionListener(new RunButtonActionListener(controller));
             
-            return button;
+        return button;
         }
 
     public void setFileTextContent(String text) {
         this.fileText.setText(text);
     }
     
-    public String getRegexFieldContent(){
+    public String getRegexFieldContent() {
         return this.regexInput.getText();
     }
     
-    public void setDisplayContent(String text){
+    public void setDisplayContent(String text) {
         this.display.setText(text);
     }
     
