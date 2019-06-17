@@ -45,7 +45,7 @@ public class State {
 
     /**
      * Returns the index of the character from where the earliest possible
-     * match with this state was found
+     * match with this state was found.
      * 
      * @return The index of the character where a potential hit was found
      */
@@ -67,7 +67,7 @@ public class State {
      * Sets the startOfHit variable, indicating the start of the earliest
      * possible match involving this state.
      * 
-     * @param startOfHit
+     * @param startOfHit The index of the first character of a potential match
      */
     public void setStartOfHit(int startOfHit) {
         this.startOfHit = startOfHit;

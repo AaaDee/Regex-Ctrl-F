@@ -6,7 +6,11 @@ import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-
+/**
+ * The basic structure for a simple Swing GUI.
+ * 
+ * @author AD
+ */
 public class Ui extends JFrame {
     private final JLabel fileText;
     private final JButton chooseFileButton;
@@ -14,6 +18,11 @@ public class Ui extends JFrame {
     private final JTextField regexInput;
     private final JTextArea display;
 
+    /**
+     * Creates a new UI with an attached controller.
+     * 
+     * @param controller The attached controller
+     */
     public Ui(UiController controller) {
         this.setSize(600, 300);
         this.setTitle("Rexeg-Ctrl-F");
@@ -58,16 +67,31 @@ public class Ui extends JFrame {
         button.addActionListener(new RunButtonActionListener(controller));
             
         return button;
-        }
+    }
 
+    /**
+     * Sets the text displaying the file currently chosen.
+     * 
+     * @param text Text displaying the file currently chosen
+     */
     public void setFileTextContent(String text) {
         this.fileText.setText(text);
     }
     
+    /**
+     * Gets the user input from the regex text field.
+     * 
+     * @return The content of the regex text field
+     */
     public String getRegexFieldContent() {
         return this.regexInput.getText();
     }
     
+    /**
+     * Sets the display content.
+     * 
+     * @param text The new display content
+     */
     public void setDisplayContent(String text) {
         this.display.setText(text);
     }

@@ -6,12 +6,13 @@ Karkealla tasolla ohjelma koostuu säännöllisten lausekkeiden tulkista, sekä 
 
 Ohjelma on jaettu seuraaviin pakkauksiin:
 
-* **regex** sisältää säännöllisen lauseiden tulkkiin liittyvän toiminnallisuuden. Yhteistominnasta muun sovelluksen kanssa vastaa luokka RegexMatcher, joka vastaa kokonaisuuden toteuttamisesta pakkauksen muiden luokkien avulla
-* **io** sisältää tiedostojen lukemiseen käytetyn IoReader-luokan
+* **regex** sisältää säännöllisen lauseiden tulkkiin liittyvän toiminnallisuuden. Yhteistominnasta muun sovelluksen kanssa vastaa luokka RegexMatcher, joka vastaa kokonaisuuden toteuttamisesta pakkauksen muiden luokkien avulla.
+* **io** sisältää tiedostojen lukemiseen käytetyn IoReader-luokan.
 * **ui** sisältää käyttöliittymän toteutuksen. Kommunikoinnista muun sovelluksen kanssa vastaa UiController-luokka.
-* **util** sisältää toteutuksessa käytetyt itse tehdyt tietorakenteet
-* **program** sisältää suoritettavan Main-luokan, sekä Program-luokan, joka koordinoi toiminnallisuutta käytttöliittymän ja sovelluksen välillä
+* **util** sisältää toteutuksessa käytetyt itse tehdyt tietorakenteet.
+* **program** sisältää suoritettavan Main-luokan, sekä Program-luokan, joka koordinoi toiminnallisuutta käytttöliittymän ja sovelluksen välillä.
 
+Ohjelmakoodi on kirjoitettu Googlen [Java-tyylioppaan](https://google.github.io/styleguide/javaguide.html) mukaisesti pienin muutoksin (joitain sisennyssyvyyksiä on muutettu) Checkstylen avulla. Koodi on pyritty pitämään mahdollisimman helppolukuisena, ja lisäksi kaikki luokat ja näiden metodit on dokumentoitu Javadoceilla. Mikäli Javadocit eivät ole näkyvissä, ne voidaan kirjoittaa uudestaan komennolla *gradle javadoc*.
 
 ### Luokkakaavio
 
@@ -50,7 +51,7 @@ Aikavaativuuden osalta saadut enimmäisvaativuudet ovat siis *O($m^2$)* ja *O(mn
 
 ### Suorituskyky
 
-
+under construction
 
 
 ## Puutteet ja parannusehdotukset
@@ -60,3 +61,5 @@ under construction
 ## Lähteet
 
 * Bille 2018, New Algorithms for Regular Expression Matching. [Arxiv](https://arxiv.org/pdf/cs/0606116.pdf)
+
+* [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html), 2019
