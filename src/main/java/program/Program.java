@@ -34,11 +34,22 @@ public class Program {
      * @param controller The UiController of the UI currently running
      */
     public void runRegexFromBeginningOfText(UiController controller) {
+        if (!this.checkForFile(controller)){
+            return;
+        }
+        
         String regex = controller.getRegexString();
         IoReader reader = new IoReader(file);
         RegexMatcher matcher = new RegexMatcher();
         
-        int matchIndex = this.feedInputLines(matcher, reader, regex);
+        int matchIndex = -99;
+        
+        try {
+            matchIndex = this.feedInputLines(matcher, reader, regex);
+        } catch (Exception e) {
+            controller.showRegexErrorMessage();
+            return;
+        }
         
         if (matchIndex == -99) {
             controller.setNoMatchesFound();
@@ -63,23 +74,13 @@ public class Program {
             }
         }
         return matchIndex;
-    }
-    
-    /**
-     * TO BE UPDATED.
-     * @param controller tbd
-     * @param lineNumber tbd
-     * @param characterIndex tbd
-     */
-    public void findNextFrom(UiController controller, int lineNumber, int characterIndex) {
-        
-        
-    }
-    
-    private void runRegexFrom(int lineNumber, int characterIndex) {
-        
-    }
+    }    
 
-    
-    
+    private boolean checkForFile(UiController controller) {
+        if (this.file == null) {
+            controller.setNoFileFoundMessage();
+            return false;
+        }
+        return true;
+    }
 }

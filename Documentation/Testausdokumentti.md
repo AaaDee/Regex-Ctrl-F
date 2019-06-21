@@ -37,4 +37,19 @@ Mahdollisia kehitysideoita suoritusajan nopeuttamiseksi käsitellään [toteutus
 
 ### Suoritusajan skaalautuminen tekstin pituuden mukaan
 
-under construction
+Yllä olevien vertailujen lisäksi testattiin, että miten suoritusaika kasvaa erittäin suurilla teksteillä. Testaustapauksena käytettiin aiemmissa testeissä käytettyä monimutkaiempaa lauseketta, ja tekstin kokoa kaksinkertaistettiin aina 32 MB asti. Jokainen tapaus toistettiin 10 kertaa, ja suoritusajat (millisekunteina) sekä oletustoteutuksen suhteellinen nopeus omaan toteutukseen nähden on esitetty alla.
+
+| Tiedoston koko (MB) | Ctrl-F | Java | Suhteellinen ero |
+|---------------------|--------|------|------------------|
+| 1                   | 60     | 24   | 43.64%           |
+| 2                   | 112    | 46   | 41.07%           |
+| 4                   | 224    | 92   | 41.07%           |
+| 8                   | 445    | 187  | 42.02%           |
+| 16                  | 890    | 372  | 41.80%           |
+| 32                  | 1785   | 741  | 41.51%           |
+
+![Suorituskyky eri teksteilllä](/Documentation/images/performanceGraph.png "Suorituskyky eri teksteilllä")
+
+Suoritusajoista nähdään, että tekstin koon kaksinkertaistuessa myös käytetyn ajan määrä suunnilleen kaksinkertaistuu. Testin perusteella vaikuttaa siis melko selvältä, että suurin osa algoritmin ajasta kuluu tällaisella tekstikoolla simulointiin, eli tämä olisi keskeisin vaihe suorituskyvyn optimoimisessa.
+
+Huom: Testaustiedostojen koosta johtuen näitä tiedostoja ei ole GitHub-repositoriossa, joten testi ei ole suoraan toistettavissa GitHubista ladattavassa versiossa. Testi on myös oletusarvoisesti pois käytöstä.

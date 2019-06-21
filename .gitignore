@@ -29,3 +29,10 @@ nbproject/
 
 #
 .nb-gradle-properties
+
+# big test files
+lorem2.txt
+lorem4.txt
+lorem8.txt
+lorem16.txt
+lorem32.txt

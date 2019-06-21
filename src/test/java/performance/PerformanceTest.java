@@ -47,7 +47,7 @@ public class PerformanceTest {
         String testFilePath = "./src/test/resources/lorem.txt";
         String regex = "kanada";
         
-        this.runTestsForSingleCase(name, testFilePath, regex);
+        this.runTestsForSingleCase(name, testFilePath, regex, 100);
         
     }
     
@@ -57,7 +57,7 @@ public class PerformanceTest {
         String testFilePath = "./src/test/resources/lorem.txt";
         String regex = "b?i*(ps)+u(m|x)oops";
         
-        this.runTestsForSingleCase(name, testFilePath, regex);
+        this.runTestsForSingleCase(name, testFilePath, regex, 100);
         
     }
 
@@ -67,25 +67,42 @@ public class PerformanceTest {
         String testFilePath = "./src/test/resources/aa.txt";
         String regex = "(a+a+)+kanada";
         
-        this.runTestsForSingleCase(name, testFilePath, regex);
+        this.runTestsForSingleCase(name, testFilePath, regex, 100);
         
+    }
+    
+    @Ignore
+    @Test
+    public void testPerformanceOnVeryLargeFiles(){
+        this.testLargeLorem(2);
+        this.testLargeLorem(4);
+        this.testLargeLorem(8);
+        this.testLargeLorem(16);
+        this.testLargeLorem(32);
+    }
+    
+    private void testLargeLorem(int size){
+        String name = "Lorem " + size;
+        String regex = "b?i*(ps)+u(m|x)oops";
+        String testFilePath = "./src/test/resources/lorem" + size + ".txt";
+        
+        this.runTestsForSingleCase(name, testFilePath, regex, 10);
     }
     
     
     
     
-    
-    private void runTestsForSingleCase(String testName, String textFilepath, String regex){
+    private void runTestsForSingleCase(String testName, String textFilepath, String regex, int repetitions){
         IoReader reader = new IoReader(new File(textFilepath)); 
         String text = reader.giveNextLine();
 
         //Ctrl-F
-        long timeElapsed = this.timeWithCtrlF(text, regex, 100);
+        long timeElapsed = this.timeWithCtrlF(text, regex, repetitions);
         String output = "Test: " + testName + " Case: Ctrl-F Time: " + timeElapsed + " ms";
         System.out.println(output);
         
         //Default Java Regex
-        timeElapsed = this.timeWithJavaRegex(text, regex, 100);
+        timeElapsed = this.timeWithJavaRegex(text, regex, repetitions);
         output = "Test: " + testName + " Case: Java Regex: " + timeElapsed + " ms";
         System.out.println(output);
         

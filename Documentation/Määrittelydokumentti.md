@@ -8,6 +8,8 @@ Ohjelman tarkoituksena on kertoa käyttäjälle, että löytyykö etsitty merkki
 
 Säännöllisten lausekkeiden tulkki toteutetaan Thompsonin algoritmilla (Thompson 1968, Cox 2007), jossa lausekkeesta muodostetaan epädeterministinen äärellinen automaatti, jota simuloidaan pinon avulla. Algoritmi on valittu toteutettavaksi, koska se on suhteellisesta yksinkertaisuudestaan huolimatta melko tehokas vaihtoehto (Cox 2007) säännöllisten lausekkeiden toteuttamiseen.
 
+Algoritmin vaatimia tietorakenteita ovat dynaaminen lista (eli lista, jonka kokoa voidaan suurentaa tarvittaessa vrt. Javan ArrayList) ja pino. Nämä tietorakenteet toteutetaan myös.
+
 Algoritmin aikavaativuudeksi on arvioitu (Cox 2007) O(mn), missä m on annettun merkkijonon pituus, ja n on luettavan tekstitiedoston pituus. Tilavaatimuksen osalta algoritmin tulee pitää muistissa automaatin tilat, joiden suuruusluokka on m, sekä käsiteltävä tekstitiedosto. Kokonaisuudessaan tilavaativuus on siis luokkaa O(m+n). Näihin vaativuusluokkiin tulee sisältyä luonnollisesti myös toteutettavan pinoautomaatin vaativuudet, jotka ovat push- ja pop-operaatioiden osalta aikavaativuudeltaan O(1), ja tilavaativuudeltaan O(m).
 
 Regex Ctrl-F:n toteutuksessa pyritään myös näihin vaativuusluokkiin. Java-toteutuksesta (ja erityisesti Javan merkkijonojen käsittelystä) johtuen on kuitenkin erittäin todennäköistä, että ohjelma toimii vaativuusluokkansa  puitteissa hitaasti edistyneempiin algoritmeihin verrattuna.

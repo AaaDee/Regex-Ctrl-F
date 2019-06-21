@@ -95,6 +95,22 @@ public class UiController {
         this.ui.setDisplayContent(newText);
     }
 
+    /**
+     * Sets an error message showing that the search failed.
+     */
+    public void showRegexErrorMessage() {
+        String errorText = "The search you tried didn't work, please try again";
+        this.ui.setDisplayContent(errorText);
+    }
+
+    /**
+     * Sets an error message showing that no file was found.
+     */
+    public void setNoFileFoundMessage() {
+        String errorText = "Please choose a file first";
+        this.ui.setDisplayContent(errorText);
+    }
+
 
     
 }
