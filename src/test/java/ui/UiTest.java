@@ -1,19 +1,19 @@
-import io.IoReader;
-import ui.Ui;
-import ui.UiController;
+package ui;
 
+import static org.junit.Assert.assertNotNull;
+
+import java.io.File;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 import program.Program;
-import java.io.File;
 
-public class UITest {
+
+public class UiTest {
     
-    public UITest() {
+    public UiTest() {
     }
     
     @BeforeClass
@@ -33,19 +33,14 @@ public class UITest {
     }
     
     @Test
-    public void fileReadRegexWorksCorrectly(){
-        //update this
-        
+    public void uiCreatedAtStart() {
         Program program = new Program();
         UiController controller = new UiController(program);
         controller.createUi();
+
+        Ui ui = controller.getUi();
         
-        String testfilename = "./src/main/resources/samples/lorem.txt";
-        File file = new File(testfilename);
-        
-        
-        
-        
+        assertNotNull(ui);
     }
  
 }

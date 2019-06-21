@@ -1,6 +1,9 @@
-
 package performance;
 
+import io.IoReader;
+import java.io.File;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -8,17 +11,8 @@ import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 import regex.RegexMatcher;
-import io.IoReader;
-import java.io.File;
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
 
 
-
-/**
- *
- * @author AD
- */
 @Ignore("Relatively slow tests, run only when necessary")
 public class PerformanceTest {
     
@@ -42,7 +36,7 @@ public class PerformanceTest {
     }
 
     @Test
-    public void testSimpleSearch(){
+    public void testSimpleSearch() {
         String name = "Simple search";
         String testFilePath = "./src/test/resources/lorem.txt";
         String regex = "kanada";
@@ -52,7 +46,7 @@ public class PerformanceTest {
     }
     
     @Test
-    public void testComplicatedSearch(){
+    public void testComplicatedSearch() {
         String name = "Complicated Search";
         String testFilePath = "./src/test/resources/lorem.txt";
         String regex = "b?i*(ps)+u(m|x)oops";
@@ -62,7 +56,7 @@ public class PerformanceTest {
     }
 
     @Test
-    public void testPathologicalAaCase(){
+    public void testPathologicalAaCase() {
         String name = "Aa-case";
         String testFilePath = "./src/test/resources/aa.txt";
         String regex = "(a+a+)+kanada";
@@ -73,7 +67,7 @@ public class PerformanceTest {
     
     @Ignore
     @Test
-    public void testPerformanceOnVeryLargeFiles(){
+    public void testPerformanceOnVeryLargeFiles() {
         this.testLargeLorem(2);
         this.testLargeLorem(4);
         this.testLargeLorem(8);
@@ -81,7 +75,7 @@ public class PerformanceTest {
         this.testLargeLorem(32);
     }
     
-    private void testLargeLorem(int size){
+    private void testLargeLorem(int size) {
         String name = "Lorem " + size;
         String regex = "b?i*(ps)+u(m|x)oops";
         String testFilePath = "./src/test/resources/lorem" + size + ".txt";
@@ -92,7 +86,8 @@ public class PerformanceTest {
     
     
     
-    private void runTestsForSingleCase(String testName, String textFilepath, String regex, int repetitions){
+    private void runTestsForSingleCase(String testName, String textFilepath,
+            String regex, int repetitions) {
         IoReader reader = new IoReader(new File(textFilepath)); 
         String text = reader.giveNextLine();
 
@@ -108,10 +103,10 @@ public class PerformanceTest {
         
     }
     
-    private long timeWithCtrlF(String text, String regex, int repetitions){
+    private long timeWithCtrlF(String text, String regex, int repetitions) {
         long totalTime = 0;
         
-        for (int i = 0; i < repetitions; i++){
+        for (int i = 0; i < repetitions; i++) {
             long startTime = System.currentTimeMillis();
             
             RegexMatcher matcher = new RegexMatcher();
@@ -125,11 +120,11 @@ public class PerformanceTest {
         return averageTime;
     }
     
-    private long timeWithJavaRegex(String text, String regex, int repetitions){
+    private long timeWithJavaRegex(String text, String regex, int repetitions) {
         long totalTime = 0;
         regex = ".*" + regex;
         
-        for (int i = 0; i < repetitions; i++){
+        for (int i = 0; i < repetitions; i++) {
             long startTime = System.currentTimeMillis();
             
             Pattern pattern = Pattern.compile(regex);

@@ -2,7 +2,7 @@
 
 ## Ohjelman peruskuvaus ja ratkaistava ongelma
 
-Ohjelman tarkoituksena on kertoa käyttäjälle, että löytyykö etsitty merkkijono annetusta tekstitiedostosta, ja jos löytyy, niin missä kohdassa tekstitiedostoa löytö tai löydökset ovat (vrt. selaimen tai tekstinkäsittelyohjelman ctrl-f -toiminnallisuus). Pelkkien yksinkertaisten merkkijonojen lisäksi ohjelma tarjoaa myös mahdollisuuden käyttää säännöllisiä lausekkeita erikoismerkkien ()+?*| avulla. Ohjelmassa on myös yksinkertainen graafinen käyttöliittymä, joka tarjoaa mahdollisuuden tekstitiedoston lukemiseen, haettavan merkkijonon syöttämiseen, sekä tulosten esittämiseen.
+Ohjelman tarkoituksena on kertoa käyttäjälle, että löytyykö etsitty merkkijono annetusta tekstitiedostosta, ja jos löytyy, niin missä kohdassa tekstitiedostoa ensimmäinen löytö on (vrt. selaimen tai tekstinkäsittelyohjelman ctrl-f -toiminnallisuus). Pelkkien yksinkertaisten merkkijonojen lisäksi ohjelma tarjoaa myös mahdollisuuden käyttää säännöllisiä lausekkeita erikoismerkkien ()+?*| avulla. Ohjelmassa on myös yksinkertainen graafinen käyttöliittymä, joka tarjoaa mahdollisuuden tekstitiedoston lukemiseen, haettavan merkkijonon syöttämiseen, sekä tulosten esittämiseen.
 
 ## Hyödynnettävät algoritmit sekä aika- ja tilavaativuudet
 

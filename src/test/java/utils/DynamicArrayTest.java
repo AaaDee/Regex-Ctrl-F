@@ -1,10 +1,6 @@
-
 package utils;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertNotNull;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -36,14 +32,14 @@ public class DynamicArrayTest {
     }
 
     @Test
-    public void newArrayShouldBeSizeZero(){
+    public void newArrayShouldBeSizeZero() {
         DynamicArray<Integer> testArray = new DynamicArray<>();
         int size = testArray.getSize();
         assertEquals(size, 0);
     }
     
     @Test
-    public void addingIntegersIncreasesSize(){
+    public void addingIntegersIncreasesSize() {
         DynamicArray<Integer> testArray = new DynamicArray<>();
         testArray.add(10);
         
@@ -52,7 +48,7 @@ public class DynamicArrayTest {
     }
     
     @Test
-    public void addedIntegerCanBeRetrieved(){
+    public void addedIntegerCanBeRetrieved() {
         DynamicArray<Integer> testArray = new DynamicArray<>();
         testArray.add(10);
         
@@ -61,10 +57,10 @@ public class DynamicArrayTest {
     }
     
     @Test
-    public void addedIntegerCanBeRetrievedAfterSizeDouble(){
+    public void addedIntegerCanBeRetrievedAfterSizeDouble() {
         DynamicArray<Integer> testArray = new DynamicArray<>();
         
-        for (int i = 0; i < 16; i++){
+        for (int i = 0; i < 16; i++) {
             testArray.add(1);
         }
         
@@ -75,10 +71,10 @@ public class DynamicArrayTest {
     }
     
     @Test
-    public void sizeReturnedCorrectlyAfterSizeDouble(){
+    public void sizeReturnedCorrectlyAfterSizeDouble() {
         DynamicArray<Integer> testArray = new DynamicArray<>();
         
-        for (int i = 0; i < 17; i++){
+        for (int i = 0; i < 17; i++) {
             testArray.add(1);
         }
         

@@ -1,19 +1,19 @@
+package regex;
+
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import regex.InfixToPostfixParser;
 
 
-public class InfixParserTest {
+
+public class InfixToPostfixParserTest {
     private static InfixToPostfixParser parser;
     
-    public InfixParserTest() {
+    public InfixToPostfixParserTest() {
     }
     
     @BeforeClass
@@ -34,7 +34,7 @@ public class InfixParserTest {
     }
 
     @Test
-    public void formatterFormatsBasicString(){
+    public void formatterFormatsBasicString() {
         String input = "Testi";
         
         String output = parser.convertInfixToPostfix(input);
@@ -43,7 +43,7 @@ public class InfixParserTest {
     }
     
     @Test
-    public void formatterFormasStringWithOperators(){
+    public void formatterFormasStringWithOperators() {
         String input = "T?(es)ti";
         String output = parser.convertInfixToPostfix(input);
         
@@ -51,7 +51,7 @@ public class InfixParserTest {
     }
     
     @Test
-    public void postfixParsedForStringWithoutOperands(){
+    public void postfixParsedForStringWithoutOperands() {
         String input = "abc";
         String output = parser.convertInfixToPostfix(input);
         
@@ -59,7 +59,7 @@ public class InfixParserTest {
     }
     
     @Test
-    public void postfixParsedForShortStringWithOperators(){
+    public void postfixParsedForShortStringWithOperators() {
         String input = "a(bb)+a";
         String output = parser.convertInfixToPostfix(input);
         

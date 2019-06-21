@@ -34,7 +34,7 @@ public class Program {
      * @param controller The UiController of the UI currently running
      */
     public void runRegexFromBeginningOfText(UiController controller) {
-        if (!this.checkForFile(controller)){
+        if (!this.checkForFile(controller)) {
             return;
         }
         

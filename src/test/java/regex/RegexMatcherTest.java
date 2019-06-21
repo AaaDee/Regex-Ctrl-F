@@ -1,21 +1,21 @@
+package regex;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+import io.IoReader;
+import java.io.File;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
-import regex.RegexMatcher;
-import io.IoReader;
-import java.io.File;
 
-/**
- *
- * @author ad
- */
-public class RegexTest {
+
+public class RegexMatcherTest {
     
-    public RegexTest() {
+    public RegexMatcherTest() {
     }
     
     @BeforeClass
@@ -41,7 +41,7 @@ public class RegexTest {
         
         RegexMatcher matcher = new RegexMatcher();
         boolean matchFound = matcher.isRegexFoundInText(regex, text);
-        assert(matchFound);
+        assertTrue(matchFound);
     }
     
     @Test
@@ -51,7 +51,7 @@ public class RegexTest {
         
         RegexMatcher matcher = new RegexMatcher();
         boolean matchFound = matcher.isRegexFoundInText(regex, text);
-        assert(matchFound);
+        assertTrue(matchFound);
     }
     
     @Test
@@ -65,27 +65,27 @@ public class RegexTest {
     }
     
     @Test
-    public void correctMatchOnQuestionMark(){
+    public void correctMatchOnQuestionMark() {
         String regex = "bc?";
         String text = "abc";
         
         RegexMatcher matcher = new RegexMatcher();
         boolean matchFound = matcher.isRegexFoundInText(regex, text);
-        assert(matchFound);
+        assertTrue(matchFound);
     }
     
     @Test
-    public void correctMatchOnQuestionMarkInTheBeginning(){
+    public void correctMatchOnQuestionMarkInTheBeginning() {
         String regex = "a?bc";
         String text = "abc";
         
         RegexMatcher matcher = new RegexMatcher();
         boolean matchFound = matcher.isRegexFoundInText(regex, text);
-        assert(matchFound);
+        assertTrue(matchFound);
     }
     
     @Test
-    public void positionOfSimpleStringCorrect(){
+    public void positionOfSimpleStringCorrect() {
         String regex = "a";
         String text = "abcde";
         
@@ -95,7 +95,7 @@ public class RegexTest {
     }
     
     @Test
-    public void positionOfSimpleStringCorrect2(){
+    public void positionOfSimpleStringCorrect2() {
         String regex = "b";
         String text = "abcde";
         
@@ -105,7 +105,7 @@ public class RegexTest {
     }
     
     @Test
-    public void positionOfSimpleStringWothQuestionMarkCorrect(){
+    public void positionOfSimpleStringWothQuestionMarkCorrect() {
         String regex = "ak?";
         String text = "abcde";
         
@@ -115,7 +115,7 @@ public class RegexTest {
     }
     
     @Test
-    public void positionOfSimpleStringWothQuestionMarkinBeginningCorrect(){
+    public void positionOfSimpleStringWothQuestionMarkinBeginningCorrect() {
         String regex = "f?b";
         String text = "abcde";
         
@@ -125,7 +125,7 @@ public class RegexTest {
     }
     
     @Test
-    public void nonMatchPositionMinus99(){
+    public void nonMatchPositionMinus99() {
         String regex = "fdasgdsa";
         String text = "abcde";
         
@@ -135,17 +135,17 @@ public class RegexTest {
     }
     
     @Test
-    public void simpleVerticalLineMatchesCorrectly(){
+    public void simpleVerticalLineMatchesCorrectly() {
         String regex = "ae|bc";
         String text = "abc";
         
         RegexMatcher matcher = new RegexMatcher();
         boolean matchFound = matcher.isRegexFoundInText(regex, text);
-        assert(matchFound);
+        assertTrue(matchFound);
     }
     
     @Test
-    public void simpleVerticalLineNonMatchesCorrectly(){
+    public void simpleVerticalLineNonMatchesCorrectly() {
         String regex = "ae|fc";
         String text = "abc";
         
@@ -155,57 +155,57 @@ public class RegexTest {
     }
     
     @Test
-    public void simpleStarMatchesCorrectly(){
+    public void simpleStarMatchesCorrectly() {
         String regex = "ab*c";
         String text = "abc";
         
         RegexMatcher matcher = new RegexMatcher();
         boolean matchFound = matcher.isRegexFoundInText(regex, text);
-        assert(matchFound);
+        assertTrue(matchFound);
     }
     
     @Test
-    public void StarLoopMatchesCorrectly(){
+    public void starLoopMatchesCorrectly() {
         String regex = "ab*c";
         String text = "abbbbc";
         
         RegexMatcher matcher = new RegexMatcher();
         boolean matchFound = matcher.isRegexFoundInText(regex, text);
-        assert(matchFound);
+        assertTrue(matchFound);
     }
     
     @Test
-    public void wrongStarIgnoredCorrectly(){
+    public void wrongStarIgnoredCorrectly() {
         String regex = "ax*bc";
         String text = "abc";
         
         RegexMatcher matcher = new RegexMatcher();
         boolean matchFound = matcher.isRegexFoundInText(regex, text);
-        assert(matchFound);
+        assertTrue(matchFound);
     }
     
     @Test
-    public void simplePlusMatchesCorrectly(){
+    public void simplePlusMatchesCorrectly() {
         String regex = "a+bc";
         String text = "abc";
         
         RegexMatcher matcher = new RegexMatcher();
         boolean matchFound = matcher.isRegexFoundInText(regex, text);
-        assert(matchFound);
+        assertTrue(matchFound);
     }
     
     @Test
-    public void plusMatchesToDoubleCorrectly(){
+    public void plusMatchesToDoubleCorrectly() {
         String regex = "a+bc";
         String text = "aabc";
         
         RegexMatcher matcher = new RegexMatcher();
         boolean matchFound = matcher.isRegexFoundInText(regex, text);
-        assert(matchFound);
+        assertTrue(matchFound);
     }
     
     @Test
-    public void plusDoesntMatchToNone(){
+    public void plusDoesntMatchToNone() {
         String regex = "a+bc";
         String text = "bc";
         
@@ -215,11 +215,11 @@ public class RegexTest {
     }
     
     @Test
-    public void complicatedStringPositionedInLongText(){
+    public void complicatedStringPositionedInLongText() {
         String regex = "(b?i*(ps)+u(m|x)oops)|(b?anada)";
         
         File file = new File("./src/test/resources/lorem.txt");
-        IoReader reader= new IoReader(file);
+        IoReader reader = new IoReader(file);
         String text = reader.giveNextLine();
         
         RegexMatcher matcher = new RegexMatcher();

@@ -4,7 +4,7 @@
 
 Ohjelman toiminnallisuutta on pyritty testaamaan kattavasti yksikkötestien avulla. Testit ja testausraportti voidaan toisintaa esimerkiksi *gradle jacocoTestReport* -komennon avulla.
 
-Yksikkötestauksessa on keskitytty säännöllisten lauseiden tulkin ja tietorakenteiden testaamiseen, käyttöliittymäluokkia on testattu melko vähän.
+Yksikkötestauksessa on keskitytty säännöllisten lauseiden tulkin ja tietorakenteiden testaamiseen, käyttöliittymäluokkia on testattu melko vähän. Lisäksi testauksen ulkopuolelle on jätetty yksinkertaisia rakenteita kuvaavat luokat, joilla ei ole omia metodeita get- ja set-metodeita lukuunottamatta. Toiminnallisuuden keskeinen osa on säännöllisten lausekkeiden hakeminen oikein, joten käytännössä valtaosa testauksesta tehdään luokassa RegexMatcherTest ja muissa luokissa testataan lähinnä yksittäisten metodien toimivuutta.
 
 ## Suorituskykytestaus
 
@@ -39,14 +39,14 @@ Mahdollisia kehitysideoita suoritusajan nopeuttamiseksi käsitellään [toteutus
 
 Yllä olevien vertailujen lisäksi testattiin, että miten suoritusaika kasvaa erittäin suurilla teksteillä. Testaustapauksena käytettiin aiemmissa testeissä käytettyä monimutkaiempaa lauseketta, ja tekstin kokoa kaksinkertaistettiin aina 32 MB asti. Jokainen tapaus toistettiin 10 kertaa, ja suoritusajat (millisekunteina) sekä oletustoteutuksen suhteellinen nopeus omaan toteutukseen nähden on esitetty alla.
 
-| Tiedoston koko (MB) | Ctrl-F | Java | Suhteellinen ero |
-|---------------------|--------|------|------------------|
-| 1                   | 60     | 24   | 43.64%           |
-| 2                   | 112    | 46   | 41.07%           |
-| 4                   | 224    | 92   | 41.07%           |
-| 8                   | 445    | 187  | 42.02%           |
-| 16                  | 890    | 372  | 41.80%           |
-| 32                  | 1785   | 741  | 41.51%           |
+| Tiedoston koko (MB) | Ctrl-F | Java | Suhteellinen nopeus |
+|---------------------|--------|------|---------------------|
+| 1                   | 60     | 24   | 43.64%              |
+| 2                   | 112    | 46   | 41.07%              |
+| 4                   | 224    | 92   | 41.07%              |
+| 8                   | 445    | 187  | 42.02%              |
+| 16                  | 890    | 372  | 41.80%              |
+| 32                  | 1785   | 741  | 41.51%              |
 
 ![Suorituskyky eri teksteilllä](/Documentation/images/performanceGraph.png "Suorituskyky eri teksteilllä")
 

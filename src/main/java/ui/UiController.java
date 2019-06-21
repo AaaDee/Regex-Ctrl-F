@@ -99,7 +99,7 @@ public class UiController {
      * Sets an error message showing that the search failed.
      */
     public void showRegexErrorMessage() {
-        String errorText = "The search you tried didn't work, please try again";
+        String errorText = "The regex term couldn't be parsed, please try again.";
         this.ui.setDisplayContent(errorText);
     }
 
@@ -107,10 +107,17 @@ public class UiController {
      * Sets an error message showing that no file was found.
      */
     public void setNoFileFoundMessage() {
-        String errorText = "Please choose a file first";
+        String errorText = "Please choose a file first.";
         this.ui.setDisplayContent(errorText);
     }
 
-
+    /**
+     * Returns the UI connected to the controller.
+     * 
+     * @return The UI connected to the controller.
+     */
+    public Ui getUi() {
+        return ui;
+    }
     
 }
