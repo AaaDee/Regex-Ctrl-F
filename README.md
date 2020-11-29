@@ -1,5 +1,5 @@
 # Regex-Ctrl-F
-Regex implementation in Java, coursework for University of Helsinki (in Finnish)
+A regex implementation and an associated UI in Java, coursework for the University of Helsinki (in Finnish)
 
 ## Dokumentaatio
 
